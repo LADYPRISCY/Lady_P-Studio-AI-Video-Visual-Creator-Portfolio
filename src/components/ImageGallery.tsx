@@ -17,19 +17,18 @@ export const ImageGallery: React.FC = () => {
     <section id="gallery" className="py-16 sm:py-24 md:py-32 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-6">
-          <div>
-            <div className="inline-flex items-center gap-2 mb-3">
-              <span className="w-2 h-0.5 bg-amber-400" />
-              <span className="text-xs font-bold tracking-[0.25em] uppercase text-amber-400">
-                EXHIBITION CURATION
-              </span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-black text-white dark:text-white light:text-neutral-900 tracking-tight font-display">
-              AI Image Gallery
-            </h2>
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+          <div className="inline-flex items-center justify-center gap-2 mb-3">
+            <span className="w-2 h-0.5 bg-amber-400" />
+            <span className="text-xs font-bold tracking-[0.25em] uppercase text-amber-400">
+              EXHIBITION CURATION
+            </span>
+            <span className="w-2 h-0.5 bg-amber-400" />
           </div>
-          <p className="text-sm md:text-base text-neutral-400 dark:text-neutral-400 light:text-neutral-600 max-w-md">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-black text-white dark:text-white light:text-neutral-900 tracking-tight font-display mb-3">
+            AI Image Gallery
+          </h2>
+          <p className="text-sm md:text-base text-neutral-400 dark:text-neutral-400 light:text-neutral-600 max-w-xl mx-auto">
             Editorial visual compositions engineered through custom prompt syntax, micro-surface lighting, and high-coherence diffusion. Click any frame for exhibition lightbox.
           </p>
         </div>

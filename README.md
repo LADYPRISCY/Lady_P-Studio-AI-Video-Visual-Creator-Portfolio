@@ -102,6 +102,7 @@ npm run build
 ## 📬 Contact & Direct Inquiries
 
 - **Creator**: Adeleke Priscilla (LADY_P STUDIO)
+- **WhatsApp**: [+234 706 853 9317 (07068539317)](https://wa.me/2347068539317?text=Hello%20Lady_P%20Studio%2C%20I%20am%20interested%20in%20working%20with%20you%20on%20a%20project.)
 - **Email**: [adelekepriscilla2019@gmail.com](mailto:adelekepriscilla2019@gmail.com)
 - **TikTok**: [@adelekepriscilla8](https://www.tiktok.com/@adelekepriscilla8?_r=1&_t=ZS-9A5a3kWJAdl)
 - **Role**: AI Video & Visual Creator (Cinematic Advertising, High-Concept Fashion, Surrealist Worldbuilding)

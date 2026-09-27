@@ -10,7 +10,6 @@ import { Hero } from './components/Hero.tsx';
 import { About } from './components/About.tsx';
 import { SelectedWork } from './components/SelectedWork.tsx';
 import { FeaturedVideo } from './components/FeaturedVideo.tsx';
-import { ImageGallery } from './components/ImageGallery.tsx';
 import { Services } from './components/Services.tsx';
 import { Process } from './components/Process.tsx';
 import { GalleryTestimonialSplit } from './components/GalleryTestimonialSplit.tsx';
@@ -54,9 +53,6 @@ export default function App() {
 
           {/* Featured AI Video Section */}
           <FeaturedVideo />
-
-          {/* AI Image Gallery */}
-          <ImageGallery />
 
           {/* Services Section */}
           <Services onSelectService={handleInquireProject} />
