@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <!-- Dark Metallic Gradient Background -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141416" />
+      <stop offset="100%" stop-color="#070709" />
+    </linearGradient>
+
+    <!-- Warm Amber-Gold Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="45%" stop-color="#F5C32C" />
+      <stop offset="100%" stop-color="#EAB308" />
+    </linearGradient>
+
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5C32C" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#78350F" stop-opacity="0.5" />
+    </linearGradient>
+  </defs>
+
+  <!-- Squircle / Rounded Frame with subtle shadow -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="2.5" />
+
+  <!-- Inner Ambient Gold Glow -->
+  <circle cx="32" cy="30" r="18" fill="#F5C32C" opacity="0.12" />
+
+  <!-- Letter P with Precision Geometry -->
+  <!-- Vertical Stem -->
+  <path d="M 23 16 L 29.5 16 L 29.5 48 L 23 48 Z" fill="url(#goldGrad)" />
+  
+  <!-- Curved Upper Loop of P -->
+  <path d="M 27 16 C 36.5 16 43 20 43 28 C 43 36 36.5 40 27 40 L 27 34 C 33 34 36.5 31.5 36.5 28 C 36.5 24.5 33 22 27 22 Z" fill="url(#goldGrad)" />
+
+  <!-- Spark / Cinema AI Star Accent at Top Right of Loop -->
+  <path d="M 43 14 Q 45 19 50 20 Q 45 21 43 26 Q 41 21 36 20 Q 41 19 43 14 Z" fill="#FDE047" />
+</svg>
