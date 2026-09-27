@@ -54,7 +54,9 @@ export const Navbar: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'py-3.5 bg-neutral-950/80 dark:bg-[#08080A]/85 light:bg-white/85 backdrop-blur-md border-b border-neutral-800/60 dark:border-neutral-800/80 light:border-neutral-200/80 shadow-sm'
+          ? theme === 'light'
+            ? 'py-3.5 bg-white/90 backdrop-blur-md border-b border-neutral-200/90 shadow-sm text-neutral-900'
+            : 'py-3.5 bg-[#08080A]/85 backdrop-blur-md border-b border-neutral-800/80 shadow-sm text-white'
           : 'py-6 bg-transparent'
       }`}
     >
@@ -98,8 +100,10 @@ export const Navbar: React.FC = () => {
                 onClick={() => handleNavClick(link.href)}
                 className={`relative py-1 transition-colors duration-200 whitespace-nowrap cursor-pointer ${
                   isActive
-                    ? 'text-amber-400 font-semibold'
-                    : 'text-neutral-400 hover:text-white dark:text-neutral-400 dark:hover:text-white light:text-neutral-600 light:hover:text-neutral-900'
+                    ? 'text-amber-500 font-semibold'
+                    : theme === 'light'
+                    ? 'text-neutral-600 hover:text-neutral-900'
+                    : 'text-neutral-400 hover:text-white'
                 }`}
               >
                 {link.label}
@@ -117,7 +121,11 @@ export const Navbar: React.FC = () => {
           <button
             onClick={toggleTheme}
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            className="relative p-2.5 rounded-full text-neutral-300 dark:text-neutral-300 light:text-neutral-700 bg-neutral-900/80 dark:bg-neutral-900/90 light:bg-neutral-100 hover:text-amber-400 dark:hover:text-amber-400 border border-neutral-800 dark:border-neutral-800 light:border-neutral-200 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-amber-400/50 cursor-pointer"
+            className={`relative p-2.5 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-amber-400/50 cursor-pointer border ${
+              theme === 'light'
+                ? 'bg-neutral-100 text-neutral-800 border-neutral-300 hover:text-amber-500 shadow-sm'
+                : 'bg-neutral-900/80 text-neutral-300 border-neutral-800 hover:text-amber-400'
+            }`}
           >
             {theme === 'dark' ? (
               <Sun className="w-4 h-4 text-amber-400 transition-transform duration-300 rotate-0 hover:rotate-45" />

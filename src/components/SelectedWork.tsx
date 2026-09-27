@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { PROJECTS } from '../data/portfolioData.ts';
 import { CategoryType, Project } from '../types.ts';
 import { ProjectModal } from './ProjectModal.tsx';
@@ -13,6 +13,70 @@ const CATEGORIES: CategoryType[] = [
   'Product Visuals',
   'Storytelling',
 ];
+
+interface CardVideoPlayerProps {
+  src: string;
+  poster: string;
+  title: string;
+}
+
+const CardVideoPlayer: React.FC<CardVideoPlayerProps> = ({ src, poster, title }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Ensure audio tracks are strictly disabled so browser security always permits autoplay
+    video.muted = true;
+    video.defaultMuted = true;
+    video.volume = 0;
+
+    const playVideo = () => {
+      const promise = video.play();
+      if (promise !== undefined) {
+        promise.catch(() => {
+          // Autoplay paused by browser policy until interaction
+        });
+      }
+    };
+
+    playVideo();
+
+    // Use IntersectionObserver to play whenever card scrolls into viewport
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            playVideo();
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(video);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [src]);
+
+  return (
+    <video
+      ref={videoRef}
+      key={src}
+      src={src}
+      poster={poster}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="auto"
+      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 pointer-events-none"
+    />
+  );
+};
 
 interface SelectedWorkProps {
   onSelectProjectForContact?: (projectTitle: string) => void;
@@ -91,16 +155,10 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({ onSelectProjectForCo
                 {/* Visual Thumbnail Area with Video Support */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-950">
                   {project.videoUrl ? (
-                    <video
-                      key={project.videoUrl}
+                    <CardVideoPlayer
                       src={project.videoUrl}
                       poster={project.image}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="auto"
-                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 pointer-events-none"
+                      title={project.title}
                     />
                   ) : (
                     <img

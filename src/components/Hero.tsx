@@ -73,7 +73,7 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[90vh] lg:min-h-screen pt-28 lg:pt-32 pb-16 flex flex-col justify-center overflow-hidden bg-neutral-950 text-white selection:bg-[#f5c32c] selection:text-neutral-950"
+      className="relative min-h-[90vh] lg:min-h-screen pt-28 lg:pt-32 pb-16 flex flex-col justify-center overflow-hidden bg-neutral-950 dark:bg-neutral-950 light:bg-white text-white dark:text-white light:text-neutral-900 selection:bg-[#f5c32c] selection:text-neutral-950 transition-colors duration-300"
     >
       {/* Cinematic Golden Ambient Atmosphere Glow */}
       <div className="absolute top-1/2 left-2/3 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[550px] bg-amber-500/10 blur-[160px] pointer-events-none rounded-full" />
@@ -91,14 +91,14 @@ export const Hero: React.FC = () => {
             </span>
 
             {/* Massive Bold Headline */}
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl xl:text-6xl font-black tracking-tight text-white leading-[1.06] sm:leading-[1.04] uppercase font-display mb-4 sm:mb-5">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl xl:text-6xl font-black tracking-tight text-white dark:text-white light:text-neutral-900 leading-[1.06] sm:leading-[1.04] uppercase font-display mb-4 sm:mb-5">
               I CREATE <br />
               VISUALS THAT <br />
               <span className="text-[#f5c32c]">TELL STORIES.</span>
             </h1>
 
             {/* Subtext description */}
-            <p className="text-sm sm:text-base text-neutral-300 max-w-lg leading-relaxed font-normal mb-6 sm:mb-8">
+            <p className="text-sm sm:text-base text-neutral-300 dark:text-neutral-300 light:text-neutral-600 max-w-lg leading-relaxed font-normal mb-6 sm:mb-8">
               Cinematic AI videos, visual storytelling and digital experiences built to capture attention and bring ideas to life.
             </p>
 
@@ -114,10 +114,10 @@ export const Hero: React.FC = () => {
 
               <button
                 onClick={scrollToContact}
-                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 rounded-full bg-transparent hover:bg-neutral-900/60 border border-neutral-700 hover:border-neutral-500 text-neutral-200 hover:text-white text-xs sm:text-sm font-semibold transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] cursor-pointer group text-center"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 rounded-full bg-transparent hover:bg-neutral-900/60 dark:hover:bg-neutral-900/60 light:hover:bg-neutral-100 border border-neutral-700 dark:border-neutral-700 light:border-neutral-300 hover:border-neutral-500 dark:hover:border-neutral-500 light:hover:border-neutral-400 text-neutral-200 dark:text-neutral-200 light:text-neutral-800 hover:text-white dark:hover:text-white light:hover:text-neutral-950 text-xs sm:text-sm font-semibold transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] cursor-pointer group text-center"
               >
                 <span>Let's Work Together</span>
-                <ArrowRight className="w-4 h-4 text-neutral-400 group-hover:text-white group-hover:translate-x-0.5 transition-all" />
+                <ArrowRight className="w-4 h-4 text-neutral-400 dark:text-neutral-400 light:text-neutral-600 group-hover:text-white dark:group-hover:text-white light:group-hover:text-neutral-950 group-hover:translate-x-0.5 transition-all" />
               </button>
             </div>
           </div>
